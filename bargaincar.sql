@@ -27,6 +27,37 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `categorias`
 --
 
+
+-- Tabela para Marcas
+CREATE TABLE `marcas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `marca` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Tabela para Carros
+CREATE TABLE `carros` (
+  `carros_id` INT NOT NULL AUTO_INCREMENT,
+  `carros_modelo` VARCHAR(255) NOT NULL,
+  `carros_ano_fabricacao` INT NOT NULL,
+  `carros_ano_modelo` INT NOT NULL,
+  `carros_tipo_combustivel` VARCHAR(20) NOT NULL,
+  `carros_placa` CHAR(8) NOT NULL UNIQUE,
+  `carros_cor` VARCHAR(30) NOT NULL,
+  `carros_quilometragem` INT NOT NULL,
+  `carros_cambio` VARCHAR(20) NOT NULL,
+  `carros_preco_venda` DECIMAL(10,2) NOT NULL,
+  `carros_preco_fipe` DECIMAL(10,2) NOT NULL,
+  `carros_status` VARCHAR(20) NOT NULL,
+  `carros_data_cadastro` DATE NOT NULL,
+  `marcas_id` INT NOT NULL,
+  PRIMARY KEY (`carros_id`),
+  FOREIGN KEY (`marcas_id`) REFERENCES `marcas`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
 CREATE TABLE `categorias` (
   `categorias_id` int NOT NULL,
   `categorias_nome` varchar(255) NOT NULL

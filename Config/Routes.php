@@ -58,5 +58,16 @@ return [
     '/sobre' => ['HomeController', 'sobre'],
 
     '/projeto/relatorios/index' => ['Relatorios', 'index'],
+
+    '/projeto/carros' => ['Carros', 'index'],
+    '/projeto/carros/new' => ['Carros', 'new'],
+    '/projeto/carros/index' => ['Carros', 'index'],
+    '/projeto/carros/edit/{id}' => ['Carros', 'edit'],
+    '/projeto/carros/delete/{id}' => ['Carros', 'delete'],
+    '/projeto/carros/save' => ['Carros', 'save'],
+    '/projeto/carros/edit_save' => ['Carros', 'edit_save'],
+    '/projeto/carros/search' => ['Carros', 'search'],
+    '/projeto/carros/update' => ['Carros', 'update'],
+  
 ];
 
